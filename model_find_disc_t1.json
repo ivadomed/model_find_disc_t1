@@ -1,8 +1,8 @@
 {
     "command": "train",
     "gpu": 0,
-    "log_directory": "labeling_t1test_transf_t2",
-    "model_name": "find_disc_t1_transf_t2",
+    "log_directory": "labeling_t1test_res",
+    "model_name": "find_disc_t1_res",
     "debugging": true,
     "loader_parameters": {
         "bids_path": "/home/GRAMES.POLYMTL.CA/luroub/luroub_local/lurou_local/deep_VL_2019/straight/",
@@ -79,7 +79,7 @@
         "mixup_alpha": null,
         "transfer_learning": {
             "retrain_model": "./best_model.pt",
-            "retrain_fraction": 0.9,
+            "retrain_fraction": 1.0,
             "reset": false
         }
     },
@@ -131,11 +131,10 @@
         }
     },
     "transformation": {
-        "Resample":{
-		"wspace": 1,
-                "hspace": 1,
-            	"dspace": 1,
-            	"preprocessing": true},
+        "Resample": {
+            "hspace": 1,
+            "wspace": 1
+        },
         "NumpyToTensor": {},
         "NormalizeInstance": {
             "applied_to": [
